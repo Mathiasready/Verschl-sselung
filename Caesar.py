@@ -2,9 +2,12 @@ abc=["a","b","c","d","e","e","f","g","h","i","j","k","l","m","n","o","p","q","r"
 def encrypt(msg_clear: str, key: int):
     msg_hidden=""
     for c in msg_clear:
-        i=abc.index(c)
-        new_i=i+key
-        new_c=abc[new_i]
+        try:
+            i=abc.index(c)
+            new_i=i+key
+            new_c=abc[new_i]
+        except ValueError:
+            new_c = c
         msg_hidden+=new_c
     return msg_hidden
 
