@@ -2,7 +2,7 @@ import Caesar
 print("Willkommen zum Verschlüsselungsverfahren")
 print("-"*60)
 while True:
-    msg_clear=input("Was willst du verschlüsseln? (Space um zum beednden)")
+    msg_clear=input("Was willst du verschlüsseln? (Enter um zum beenden)")
     if msg_clear =="":
         break
     key=int(input("Welches Passwort möchtest du verwenden?"))
