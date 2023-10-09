@@ -6,16 +6,26 @@ print("-" * 60)
 
 def do_encrypt():
     msg_clear = input("Was willst du verschlüsseln?")
-    key = int(input("Welches Passwort möchtest du verwenden?"))
+    key = get_key()
     msg_hidden = Caesar.encrypt(msg_clear, key)
     print(msg_hidden)
 
 
 def do_decrypt():
     msg_clear = input("Was willst du entschlüsseln?")
-    d_key = int(input("Welches Passwort möchtest du verwenden?"))
+    d_key = get_key()
     msg_hidden = Caesar.decrypt(msg_clear, d_key)
     print(msg_hidden)
+
+
+def get_key():
+    while True:
+        try:
+            d_key = int(input("Welches Passwort möchtest du verwenden?"))
+            break
+        except ValueError:
+            print("Bitte eine ganze Zahl eingeben")
+    return d_key
 
 
 def do_bruteforce():
